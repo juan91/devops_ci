@@ -104,4 +104,7 @@ public class BasicApplicationTests {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.invoiceId").value(1));
     }
 
+    @Test
+    public testtest() {}
+
 }
