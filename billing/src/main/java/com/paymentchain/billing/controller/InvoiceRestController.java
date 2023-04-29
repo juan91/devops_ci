@@ -93,4 +93,15 @@ public class InvoiceRestController {
         }
         return ResponseEntity.ok().build();
     }
+
+        @DeleteMapping("/v2/{id}")
+    public ResponseEntity<?> deletev2(@PathVariable String id) {
+          Invoice save = null; 
+        Optional<Invoice> findById = billingRepository.findById(Long.valueOf(id));
+        Invoice get = findById.get();
+        if(get != null){               
+                  billingRepository.delete(get);  
+        }
+        return ResponseEntity.ok().build();
+    }
 }
